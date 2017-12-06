@@ -1,7 +1,9 @@
 package com.mobapptuts.googleapiauthenticator
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -52,8 +54,18 @@ class MainActivity : AppCompatActivity() {
     private fun checkPreConditions() {
         if (!isGooglePlayServicesAvailable())
             acquireGooglePlayServices()
+        else if (!isNeworkAvailable())
+            statusButton.text = resources.getString(R.string.network_not_available)
         else
-            statusButton.text = resources.getString(R.string.gps_avaialable)
+            statusButton.text = resources.getString(R.string.gps_network_available)
+    }
+
+    private fun isNeworkAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE)
+        return if (connectivityManager is ConnectivityManager) {
+            val networkInfo = connectivityManager.activeNetworkInfo
+            networkInfo.isConnected
+        } else false
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

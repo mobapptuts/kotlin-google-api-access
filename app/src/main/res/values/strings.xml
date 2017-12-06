@@ -3,4 +3,6 @@
     <string name="google_api">check Google API availability</string>
     <string name="gps_failed">Cannot find or install Google Play Services</string>
     <string name="gps_avaialable">Google Play Services is installed</string>
+    <string name="gps_network_available"><![CDATA[Google Play Services & Network is available]]></string>
+    <string name="network_not_available">Network is not avaiable</string>
 </resources>
