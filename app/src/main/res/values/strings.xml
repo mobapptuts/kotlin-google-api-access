@@ -5,4 +5,5 @@
     <string name="gps_avaialable">Google Play Services is installed</string>
     <string name="gps_network_available"><![CDATA[Google Play Services & Network is available]]></string>
     <string name="network_not_available">Network is not avaiable</string>
+    <string name="gps_network_accountname_available"><![CDATA[Goople Play & Network & Account Name Available]]></string>
 </resources>
